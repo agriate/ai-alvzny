@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form" class="form-container active">
+            <h2>Log In</h2>
+            <form id="login-form-submit">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <p class="switch-link">Don't have an account? <a href="#" id="show-register">Register</a></p>
+            <p class="forgot-link"><a href="#" id="show-forgot">Forgot Password?</a></p>
+        </div>
+
+        <div id="register-form" class="form-container hidden">
+            <h2>Register</h2>
+            <form id="register-form-submit">
+                <input type="email" id="reg-email" placeholder="Email" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p class="switch-link">Already have an account? <a href="#" id="show-login-from-register">Log In</a></p>
+        </div>
+
+        <div id="forgot-form" class="form-container hidden">
+            <h2>Reset Password</h2>
+            <form id="forgot-password-form">
+                <p id="forgot-message">Enter your email to receive a reset code.</p>
+                <input type="email" id="forgot-email" placeholder="Email" required>
+                
+                <input type="text" id="reset-code-input" placeholder="Enter 6-digit Code" maxlength="6" class="hidden">
+                
+                <button type="submit" id="forgot-submit-button">Send Reset Code</button>
+            </form>
+            <p class="switch-link"><a href="#" id="show-login-from-forgot">Back to Log In</a></p>
+        </div>
+
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

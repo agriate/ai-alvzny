@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="app-container">
+        <div id="sidebar">
+            <div id="chat-history-list">
+                <p class="sidebar-title">Chat History</p>
+                <button id="new-chat-button">➕ Start New Chat</button>
+            </div>
+            <div id="settings-area">
+                <p>User: <span id="user-email-display">Guest</span></p>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <header>
+                <span id="header-title">Live Server Chat</span>
+                <div id="header-controls">
+                    <button id="mode-toggle" title="Toggle Dark/Light Mode">🌙</button> 
+                    <button id="logout-button" class="hidden">Log Out</button>
+                </div>
+            </header>
+            
+            <div id="welcome-container"> 
+                <div class="welcome-box">
+                    <h2>Welcome to the Home Page! 👋</h2>
+                    <p>This page is only accessible after a successful login.</p>
+                    <button id="continue-button">Continue</button>
+                </div>
+            </div>
+
+            <div id="chat-interface" class="hidden-chat-section">
+                
+                <div id="chat-history-area">
+                    <div class="chat-message bot-message">
+                        <span class="avatar">🤖</span>
+                        <p>Hello! I am your AI assistant. How can I help you today?</p>
+                    </div>
+                </div>
+
+                <form id="chat-form">
+                    <input type="text" id="chat-input" placeholder="Ask your AI assistant..." required>
+                    <button type="submit" id="send-button">Send</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
